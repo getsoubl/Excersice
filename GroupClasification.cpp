@@ -80,10 +80,13 @@ void GroupClassification::findAllCompinationTagetSum5(std::vector<Group> const &
     }
 }
 std::pair<GroupIterator,GroupIterator> GroupClassification::findMinDiff(){
-    std::pair<GroupIterator,GroupIterator> p;
+    std::pair<GroupIterator,GroupIterator> p{};
     long  min = std::numeric_limits<long>::max();
     auto begin = classifiedGroup.begin();
     auto end   = classifiedGroup.end();
+    if(size() ==1){
+        return {begin,end};
+    }
     auto next_begin = std::next(begin,1);
     for(auto it = next_begin; it != end;++it){
         auto previous = std::next(it,-1);
