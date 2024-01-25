@@ -84,6 +84,9 @@ std::pair<GroupIterator,GroupIterator> GroupClassification::findMinDiff(){
     long  min = std::numeric_limits<long>::max();
     auto begin = classifiedGroup.begin();
     auto end   = classifiedGroup.end();
+    if(size() == 0){
+        return p;
+    }
     if(size() ==1){
         return {begin,end};
     }
