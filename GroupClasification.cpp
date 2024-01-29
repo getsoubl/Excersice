@@ -68,7 +68,7 @@ void GroupClassification::findAllCompinationTagetSum5(std::vector<Group> const &
         classifiedGroups.push_back(temporalVec);
         return;
     }
-    for(std::size_t i = index; index < groups.size();++i ){
+    for(std::size_t i = index; i < groups.size();++i ){
         if (groups[i].count_ > sum){
             break;
         }
